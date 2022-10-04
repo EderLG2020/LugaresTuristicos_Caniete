@@ -1,0 +1,10 @@
+<% if (success_msg) { %>
+    <% success_msg.forEach(element=> { %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>
+                <%= element %>
+            </strong>
+            <button type="button" class="btn btn-danger btn-close border" data-bs-dismiss="alert" aria-label="Close"><i
+                    class="uil uil-multiply text-white"></i></button>
+            <% }) %>
+                <% } %>

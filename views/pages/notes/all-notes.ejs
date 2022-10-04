@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../../partials/header'); %>
+    </header>
+
+    <div class="card-header">
+        <h2>All Notes</h2>
+
+        <div class="row">
+            <% notas.forEach(nota=> { %>
+                <div class="col col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex justify-content-between align-items-center">
+                                <%= nota.title %>
+                                    <form action="/notes/edit/<%= nota._id %>?_method=GET" method="POST">
+                                        <input type="hidden" name="_method" value="GET">
+                                        <button type="submit" class="btn btn-warning btn-block btn-sm "><i
+                                                class="uil uil-edit"></i></button>
+                                    </form>
+                            </h5>
+                            <p>
+                                <%= nota.Description %>
+                            </p>
+                            <form action="/notes/delete/<%= nota._id %>?_method=DELETE" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger btn-block btn-sm ">Delete</button>
+                            </form>
+
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <% }) %>
+        </div>
+
+    </div>
+
+
+    <footer>
+        <%- include('../../partials/footer'); %>
+    </footer>
+    <%- include('../../partials/footer-f') %>
