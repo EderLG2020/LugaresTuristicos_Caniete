@@ -8,3 +8,15 @@
                     class="uil uil-multiply text-white"></i></button>
             <% }) %>
                 <% } %>
+
+
+                    <% if (error_msg) { %>
+                        <% error_msg.forEach(elementa=> { %>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>
+                                    <%= elementa %>
+                                </strong>
+                                <button type="button" class="btn btn-danger btn-close border" data-bs-dismiss="alert"
+                                    aria-label="Close"><i class="uil uil-multiply text-white"></i></button>
+                                <% }) %>
+                                    <% } %>

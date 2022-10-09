@@ -5,7 +5,7 @@ indexCtrl.renderIndex = (req, res) => {
 };
 
 indexCtrl.renderAbout = (req, res) => {
-  res.send("pages/about");
+  res.render("pages/about");
 };
 
 module.exports = indexCtrl;

@@ -1,5 +1,5 @@
 const { Router } = require("express");
-
+const { isAuthenticate } = require("../helpers/validateUrl");
 const router = Router();
 
 const {
@@ -12,17 +12,17 @@ const {
 } = require("../controllers/notes.controller");
 
 //^ Añadir
-router.get("/notes/add", renderNotesForm);
-router.post("/notes/add", RenderAddNote);
+router.get("/notes/add", isAuthenticate, renderNotesForm);
+router.post("/notes/add", isAuthenticate, RenderAddNote);
 
 //^ Listar
-router.get("/notes", RenderListNote);
+router.get("/notes", isAuthenticate, RenderListNote);
 
 //^ Edit
-router.get("/notes/edit/:id", RenderEditForm);
-router.put("/notes/edit/:id", RenderUpdateForm);
+router.get("/notes/edit/:id", isAuthenticate, RenderEditForm);
+router.put("/notes/edit/:id", isAuthenticate, RenderUpdateForm);
 
 //^ Delete
-router.delete("/notes/delete/:id", RenderDelteForm);
+router.delete("/notes/delete/:id", isAuthenticate, RenderDelteForm);
 
 module.exports = router;

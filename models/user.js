@@ -9,6 +9,7 @@ const UserSchema = new Schema(
     email: {
       type: String,
       require: true,
+      unique: true,
     },
     password: {
       type: String,
@@ -21,7 +22,7 @@ const UserSchema = new Schema(
 );
 
 UserSchema.method.encrypPass = async (password) => {
-  const salto = await bcrypt.genSalt(5);
+  const salto = await bcrypt.genSalt(10);
   return await bcrypt.hash(password, salto);
 };
 
