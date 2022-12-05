@@ -5,7 +5,7 @@
     <%- include('../../partials/head'); %>
 </head>
 
-<body class="container">
+<body class="container bodyprincipal">
 
     <header>
         <%- include('../../partials/header'); %>
@@ -17,7 +17,7 @@
             <div class="card">
                 <div class="card-body box">
                     <form class="form" action="/users/signin" method="post">
-                        <img src="/img/ederdsdsd.png" alt="imagenLogo" class="mx-auto d-block m-4 logo">
+                        <img src="/img/login.png" alt="imagenLogo" class="mx-auto d-block m-4 logo">
                         <div class="form-group inputBox">
                             <input type="email" class="form-control" name="email" placeholder="Email">
                             <%# name="name" para que funcione un logue con la consulta a la base de datos --> Endpoint
@@ -27,7 +27,7 @@
                         <div class="form-group ">
                             <input type="password" class="form-control" name="password" placeholder="Password">
                         </div>
-                        <button class="btn btn-primary btn-block">Signin</button>
+                        <button class="col btn btn-primary btn-block">Signin</button>
                     </form>
                 </div>
 
@@ -35,7 +35,4 @@
         </div>
     </div>
 
-    <footer>
-        <%- include('../../partials/footer'); %>
-    </footer>
     <%- include('../../partials/footer-f') %>

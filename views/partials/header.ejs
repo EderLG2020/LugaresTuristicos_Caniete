@@ -1,31 +1,28 @@
-<nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-lg animate__animated animate__backInDown animate__fast">
+    <div class="container-fluid ">
         <div class="collapse navbar-collapse " id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="/">Principal</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="about">About</a>
-                </li>
-            </ul>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
             <ul class="navbar-nav ml-auto">
+
                 <% if (user) { %>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Notes
+                            <img src="/img/avatar.png" alt="logo" width="50" height="50">
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item text-white" href="/notes">All Notes</a></li>
-                            <li><a class="dropdown-item text-white" href="/notes/add">Add Notes</a></li>
+                            <li><a class="dropdown-item text-white" href="/notes">todo_Recomendacion</a></li>
+                            <li><a class="dropdown-item text-white" href="/notes/add">Editar_Configuracion</a></li>
                             <div class="dropdown-divider text-white"></div>
-                            <li><a class="dropdown-item" href="/users/logout">Logout</a></li>
+                            <li><a class="dropdown-item" href="/users/logout">Salir</a></li>
                         </ul>
                     </li>
                     <% } else { %>
@@ -36,15 +33,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-white nav-item" href="/users/signup">Register</a>
                         </li>
-
-
                         <% } %>
 
             </ul>
         </div>
     </div>
 </nav>
-
-
-
 <%- include('msg') %>

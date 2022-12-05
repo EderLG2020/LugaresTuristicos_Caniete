@@ -5,7 +5,7 @@
     <%- include('../../partials/head'); %>
 </head>
 
-<body class="container">
+<body class="container bodyprincipal">
 
     <header>
         <%- include('../../partials/header'); %>
@@ -13,33 +13,51 @@
 
     <br>
     <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="card ">
-                <div class="card-header">
-                    Account Register
-                </div>
-
-                <div class="card-body">
-                    <form action="/users/signup" method="post">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Name">
+        <div class="text-center">
+            <form action="/users/signup" method="post">
+                <div class="row justify-content-center registro">
+                    <div class="col-5">
+                        <h2 class="titulo">LOGO</h2>
+                        <img src=" /img/avatar.png" alt="imagen avatar default" width="40%">
+                        <div class="file_archive">
+                            <p>Cambiar Logo</p>
+                            <input type="file" aria-label="Archivo" id="btnfile" class="form-control btnfile"
+                                name="imagen" placeholder="Imagen" accept=".pdf,.jpg,.png" value="/img/avatar.png">
                         </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="correo" placeholder="Email">
+                    </div>
+                    <div class="col-5">
+                        <h2 class="titulo">Resgistro</h2>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="form-group col-8">
+                                    <input type="text" class="form-control" name="name" placeholder="Nombre de usuario">
+                                </div><br>
+                                <div class="form-group col-8">
+                                    <input type="email" class="form-control" name="correo"
+                                        placeholder="Correo electrónico">
+                                </div><br><br>
+                                <div class="form-group col-8">
+                                    <input type="password" class="form-control" name="password"
+                                        placeholder="Contraseña">
+                                </div>
+                                <div class="form-group col-8">
+                                    <input type="password" class="form-control" name="confirm_password"
+                                        placeholder="Confirmar contraseña">
+                                </div>
+                                <div class="form-group col-12">
+                                    <input type="checkbox" name="check">
+                                    <label for="check">acepta nuestro <a href="">terminos</a> y <a
+                                            href="">condiciones</a>
+                                    </label>
+                                </div>
+                                <button class="btn btn-primary btn-block col-8">Registrar</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="confirm_password"
-                                placeholder="Confirm Password">
-                        </div>
-                        <button class="btn btn-primary btn-block">Sign Up</button>
-                    </form>
-                </div>
-
-            </div>
+                    </div>
+            </form>
         </div>
+
+    </div>
     </div>
 
     <footer>
