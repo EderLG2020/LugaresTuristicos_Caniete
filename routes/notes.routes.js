@@ -9,6 +9,7 @@ const {
   RenderEditForm,
   RenderUpdateForm,
   RenderDelteForm,
+  RenderListFavorito,
 } = require("../controllers/notes.controller");
 
 //^ Añadir
@@ -17,6 +18,7 @@ router.post("/notes/add", isAuthenticate, RenderAddNote);
 
 //^ Listar
 router.get("/notes", isAuthenticate, RenderListNote);
+router.get("/favorito", isAuthenticate, RenderListFavorito);
 
 //^ Edit
 router.get("/notes/edit/:id", isAuthenticate, RenderEditForm);

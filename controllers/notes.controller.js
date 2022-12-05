@@ -10,13 +10,17 @@ notesCtrl.RenderAddNote = async (req, res) => {
   const myNote = new NewMmodel({ title, Description: description });
   await myNote.save();
   console.log(myNote);
-  req.flash("success_msg", "Note Added Successfully");
+  req.flash("success_msg", "Añadido");
   res.redirect("/notes");
 };
 
 notesCtrl.RenderListNote = async (req, res) => {
   const notas = await NewMmodel.find();
   res.render("pages/notes/all-notes", { notas });
+};
+
+notesCtrl.RenderListFavorito = async (req, res) => {
+  res.render("pages/notes/favoritos");
 };
 
 notesCtrl.RenderEditForm = async (req, res) => {
@@ -32,13 +36,13 @@ notesCtrl.RenderUpdateForm = async (req, res) => {
     title,
     Description: description,
   });
-  req.flash("success_msg", "Note Update Successfully");
+  req.flash("success_msg", "Actualizado");
   res.redirect("/notes");
 };
 
 notesCtrl.RenderDelteForm = async (req, res) => {
   await NewMmodel.findByIdAndDelete(req.params.id);
-  req.flash("success_msg", "Note Delete Successfully");
+  req.flash("success_msg", "Eliminado");
   res.redirect("/notes");
 };
 

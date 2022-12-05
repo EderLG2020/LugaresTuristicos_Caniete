@@ -1,18 +1,26 @@
 <nav class="navbar navbar-expand-lg animate__animated animate__backInDown animate__fast">
     <div class="container-fluid ">
         <div class="collapse navbar-collapse " id="navbarNav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
+
+
             <ul class="navbar-nav ml-auto">
 
                 <% if (user) { %>
+                    <li class="navbar-brand">
+                        <a class="nav-link ml-2 mr-5" href="#"><i class="uil uil-home"></i>&#32;Inicio</a>
+                    </li>
+                    <li class="navbar-brand">
+                        <a class="nav-link ml-2 mr-5" href="/favorito"><i class="uil uil-heart"></i>&#32;Favorito</a>
+                    </li>
+                    <li class="navbar-brand">
+                        <a class="nav-link ml-2 mr-5" href="#"><i class="uil uil-comment-alt-dots"></i>&#32;Opinion</a>
+                    </li>
+                    <li class="navbar-brand">
+                        <a class="nav-link ml-2 mr-5" href="#"><i class="uil uil-bell"></i>&#32;Alerta</a>
+                    </li>
+                    <li class="navbar-brand ">
+                        <a class="nav-link ml-2 mr-5" href="#"><i class="uil uil-plane-departure"></i>&#32;Viajes</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
