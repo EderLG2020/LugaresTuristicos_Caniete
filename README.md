@@ -9,3 +9,5 @@ RECUERDA --> Esta version aun se esta corrigiendo el diseño de la primera inter
 Error en la estructura del menu "Logeado"
 Error en el despliegue de animacion
 Carga de archivos muy pesados
+
+RamaC
