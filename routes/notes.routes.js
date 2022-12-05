@@ -9,6 +9,8 @@ const {
   RenderEditForm,
   RenderUpdateForm,
   RenderDelteForm,
+  RenderListViajes,
+  RenderListOpinion,
   RenderListFavorito,
 } = require("../controllers/notes.controller");
 
@@ -19,6 +21,8 @@ router.post("/notes/add", isAuthenticate, RenderAddNote);
 //^ Listar
 router.get("/notes", isAuthenticate, RenderListNote);
 router.get("/favorito", isAuthenticate, RenderListFavorito);
+router.get("/opinion", isAuthenticate, RenderListOpinion);
+router.get("/viaje", isAuthenticate, RenderListViajes);
 
 //^ Edit
 router.get("/notes/edit/:id", isAuthenticate, RenderEditForm);

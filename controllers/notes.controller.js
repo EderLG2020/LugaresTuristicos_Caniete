@@ -23,6 +23,14 @@ notesCtrl.RenderListFavorito = async (req, res) => {
   res.render("pages/notes/favoritos");
 };
 
+notesCtrl.RenderListOpinion = async (req, res) => {
+  res.render("pages/notes/opinion");
+};
+
+notesCtrl.RenderListViajes = async (req, res) => {
+  res.render("pages/notes/viajes");
+};
+
 notesCtrl.RenderEditForm = async (req, res) => {
   const note = await NewMmodel.findById(req.params.id);
   console.log("Recibido --->", note);
