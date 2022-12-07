@@ -10,18 +10,34 @@ userCtrl.renderSingUpForm = (req, res) => {
 
 userCtrl.signup = async (req, res) => {
   let errors = [];
-  const { name, correo, password, confirm_password } = req.body;
+  const { name, correo, password, confirm_password, checkxd } = req.body;
+  console.log(
+    req.body.name,
+    req.body.correo,
+    req.body.password,
+    req.body.confirm_password,
+    req.body.checkxd
+  );
 
+  // Vemos que las contraseñas sean iguales
   if (password != confirm_password) {
     req.flash("error_msg", "La contraseña no coincide");
     errors.push({ text: "error1" });
   }
+
+  // Vemos que las contraseñas tengan mas de 5 carcteres
   if (password.length < 5) {
     req.flash(
       "error_msg",
       "La contraseña no puede tener menos de 5 caracteres"
     );
     errors.push({ text: "error2" });
+  }
+
+  // Acepta nuestros terminos y condiciones
+  if (checkxd != "on") {
+    req.flash("error_msg", "No acepto nuestros terminos y condiciones");
+    errors.push({ text: "error3" });
   }
 
   if (errors.length > 0) {
