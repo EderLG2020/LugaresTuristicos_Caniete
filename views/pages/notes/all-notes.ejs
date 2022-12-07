@@ -8,13 +8,13 @@
 <body class="container ">
 
     <header>
-        <%- include('../../partials/header'); %>
+        <%- include('../../partials/header',{nombreusuario:nombreusuario}); %>
     </header>
 
     <div class="card-header">
         <h2 class="animate__animated animate__backInRight animate__delay-1s">Lo mas representativo de Cañete</h2>
         <br>
-        <h3 class="animate__animated animate__backInLeft animate__delay-1s">Lugares Tipicos</h3>
+        <h3 class="animate__animated animate__backInLeft animate__delay-1s">Lugares Tipicos </h3>
         <br>
         <div class="row row-cols-1 row-cols-md-3 g-4 animate__animated animate__backInLeft animate__delay-2s">
             <div class="col">
@@ -152,35 +152,35 @@
             </div>
         </div>
     </div>
-    <!-- <div class="row">
-            <% notas.forEach(nota=> { %>
-                <div class="col col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title d-flex justify-content-between align-items-center">
-                                <%= nota.title %>
-                                    <form action="/notes/edit/<%= nota._id %>?_method=GET" method="POST">
-                                        <input type="hidden" name="_method" value="GET">
-                                        <button type="submit" class="btn btn-warning btn-block btn-sm "><i
-                                                class="uil uil-edit"></i></button>
-                                    </form>
-                            </h5>
-                            <p>
-                                <%= nota.Description %>
-                            </p>
-                            <form action="/notes/delete/<%= nota._id %>?_method=DELETE" method="POST">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit" class="btn btn-danger btn-block btn-sm ">Delete</button>
-                            </form>
+    <div class="row">
+        <% notas.forEach(nota=> { %>
+            <div class="col col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-between align-items-center">
+                            <%= nota.title %>
+                                <form action="/notes/edit/<%= nota._id %>?_method=GET" method="POST">
+                                    <input type="hidden" name="_method" value="GET">
+                                    <button type="submit" class="btn btn-warning btn-block btn-sm "><i
+                                            class="uil uil-edit"></i></button>
+                                </form>
+                        </h5>
+                        <p>
+                            <%= nota.Description %>
+                        </p>
+                        <form action="/notes/delete/<%= nota._id %>?_method=DELETE" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger btn-block btn-sm ">Delete</button>
+                        </form>
 
-                        </div>
                     </div>
-                    <br>
                 </div>
-                <% }) %>
-        </div>
+                <br>
+            </div>
+            <% }) %>
+    </div>
 
-    </div> -->
+    </div>
 
 
     <footer>

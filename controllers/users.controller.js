@@ -41,7 +41,7 @@ userCtrl.signup = async (req, res) => {
           });
           await newUser.save();
           req.flash("success_msg", "User add Successfully");
-          res.redirect("pages/users/signin");
+          res.redirect("signin");
           console.log("guardado -> ", newUser);
         })
         .catch((e) => {

@@ -6,12 +6,22 @@ const override = require("method-override");
 const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
+// const multer = require("multer")
 
 require("dotenv").config("./.env");
 
 // Inicia
 const app = express();
 require("../config/passport");
+
+// var storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//       cb(null, 'uploads')
+//   },
+//   filename: (req, file, cb) => {
+//       cb(null, file.fieldname + '-' + Date.now())
+//   }
+// });
 
 // settings
 app.set("port", process.env.PORT || 3001);

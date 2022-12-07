@@ -2,39 +2,55 @@ const notesCtrl = {};
 const NewMmodel = require("../models/note");
 
 notesCtrl.renderNotesForm = (req, res) => {
-  res.render("pages/notes/newNotas");
+  console.log(req.user);
+  const nombreusuario = req.user.name;
+  res.render("pages/notes/newNotas", { nombreusuario: nombreusuario });
 };
 
 notesCtrl.RenderAddNote = async (req, res) => {
   let { title, description } = req.body;
-  const myNote = new NewMmodel({ title, Description: description });
+  // const nombreusuario = req.user.name;
+  const myNote = new NewMmodel({
+    title,
+    Description: description,
+  });
+  myNote.user = req.user.id;
   await myNote.save();
   console.log(myNote);
+
   req.flash("success_msg", "Añadido");
   res.redirect("/notes");
 };
 
 notesCtrl.RenderListNote = async (req, res) => {
-  const notas = await NewMmodel.find();
-  res.render("pages/notes/all-notes", { notas });
+  const notas = await NewMmodel.find({ user: req.user.id });
+  const nombreusuario = req.user.name;
+  console.log(req.user.name);
+  res.render("pages/notes/all-notes", { notas, nombreusuario });
 };
 
 notesCtrl.RenderListFavorito = async (req, res) => {
-  res.render("pages/notes/favoritos");
+  const nombreusuario = req.user.name;
+  res.render("pages/notes/favoritos", { nombreusuario });
 };
 
 notesCtrl.RenderListOpinion = async (req, res) => {
-  res.render("pages/notes/opinion");
+  const nombreusuario = req.user.name;
+  console.log(req.user.name);
+  res.render("pages/notes/opinion", { nombreusuario });
 };
 
 notesCtrl.RenderListViajes = async (req, res) => {
-  res.render("pages/notes/viajes");
+  const nombreusuario = req.user.name;
+  console.log(req.user.name);
+  res.render("pages/notes/viajes", { nombreusuario });
 };
 
 notesCtrl.RenderEditForm = async (req, res) => {
   const note = await NewMmodel.findById(req.params.id);
   console.log("Recibido --->", note);
-  res.render("pages/notes/edit-notes", { note });
+  const nombreusuario = req.user.name;
+  res.render("pages/notes/edit-notes", { note, nombreusuario });
 };
 
 notesCtrl.RenderUpdateForm = async (req, res) => {
