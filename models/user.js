@@ -15,15 +15,14 @@ const UserSchema = new Schema(
       type: String,
       require: true,
     },
-    // imageSchema:{
-    //   name: String,
-    //   desc: String,
-    //   img:
-    //   {
-    //       data: Buffer,
-    //       contentType: String
-    //   }
-    // }
+    image: {
+      name: String,
+      desc: String,
+      img: {
+        data: Buffer,
+        contentType: String,
+      },
+    },
   },
   {
     timestamps: true,

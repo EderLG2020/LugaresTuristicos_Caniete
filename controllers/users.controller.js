@@ -10,14 +10,8 @@ userCtrl.renderSingUpForm = (req, res) => {
 
 userCtrl.signup = async (req, res) => {
   let errors = [];
-  const { name, correo, password, confirm_password, checkxd } = req.body;
-  console.log(
-    req.body.name,
-    req.body.correo,
-    req.body.password,
-    req.body.confirm_password,
-    req.body.checkxd
-  );
+  const { name, correo, password, confirm_password, checkxd, file } = req.body;
+  console.log(file);
 
   // Vemos que las contraseñas sean iguales
   if (password != confirm_password) {
@@ -54,6 +48,7 @@ userCtrl.signup = async (req, res) => {
             name,
             email: correo,
             password: newPass,
+            imagen: file,
           });
           await newUser.save();
           req.flash("success_msg", "User add Successfully");
