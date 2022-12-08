@@ -1,5 +1,6 @@
 const notesCtrl = {};
 const NewMmodel = require("../models/note");
+const comentarioModel = require("../models/comentario");
 
 notesCtrl.renderNotesForm = (req, res) => {
   console.log(req.user);
@@ -30,8 +31,9 @@ notesCtrl.RenderListNote = async (req, res) => {
 };
 
 notesCtrl.RenderListFavorito = async (req, res) => {
+  const comentarios = await comentarioModel.find();
   const nombreusuario = req.user.name;
-  res.render("pages/notes/favoritos", { nombreusuario });
+  res.render("pages/notes/favoritos", { nombreusuario, comentarios });
 };
 
 notesCtrl.RenderListOpinion = async (req, res) => {

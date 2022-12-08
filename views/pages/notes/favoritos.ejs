@@ -109,29 +109,29 @@
                     <div class="well well-sm">
                         <div class="card" style="width: 90%;">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-
-                                    <div class="container text-center">
-                                        <div class="row justify-content-between">
-                                            <div class="col-md-4 text-left">
-                                                <p><img src="/img/avatar.png" alt="logo" width="30" height="30">
-                                                    <b>Diego Macavilca Perez</b>
-                                                </p>
+                                <% comentarios.forEach(comentario=> { %>
+                                    <li class="list-group-item">
+                                        <div class="container text-center">
+                                            <div class="row justify-content-between">
+                                                <div class="col-md-4 text-left">
+                                                    <p><img src="/img/avatar.png" alt="logo" width="30" height="30">
+                                                        <b>
+                                                            <%= comentario.user %>
+                                                        </b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-4 text-right"><b>
+                                                        <i class="uil uil-thumbs-up"></i>
+                                                        <i class="uil uil-ellipsis-v"></i>
+                                                    </b>
+                                                </div>
                                             </div>
-                                            <div class="col-md-4 text-right"><b>
-                                                    <i class="uil uil-thumbs-up"></i>
-                                                    <i class="uil uil-ellipsis-v"></i>
-                                                </b>
+                                            <div class="container text-left">
+                                                <%= comentario.mensaje %>
                                             </div>
                                         </div>
-                                        <div class="container text-left">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur vero
-                                            sapiente omnis nihil, nam vel assumenda dolorum facilis dignissimos,
-                                            nesciunt mollitia unde iure quo culpa, minus provident. Laboriosam, sint
-                                            ipsum!
-                                        </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                    <% }) %>
                             </ul>
                         </div>
                     </div>
