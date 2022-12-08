@@ -60,6 +60,84 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
+        <!-- comentario -->
+        <br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well well-sm">
+                        <form class="form-horizontal" action="/comentario/add" method="post">
+                            <fieldset>
+
+                                <legend class="text-center header">Comentario</legend>
+
+                                <div class="form-group">
+
+                                    <span class="col-md-1 col-md-offset-2 text-center"><i
+                                            class="fa fa-pencil-square-o bigicon"></i></span>
+                                    <dov class="row">
+                                        <div class="col-md-1">
+                                            <p><img src="/img/avatar.png" alt="logo" width="75" height="75">
+                                            </p>
+                                        </div>
+                                        <div class="col-md-11">
+                                            <textarea class="form-control" id="message" name="message"
+                                                placeholder="Escribenos tu comentario maximo de 300 caracteres" rows="3"
+                                                maxlength="300"></textarea>
+                                        </div>
+                                    </dov>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12 text-right">
+                                        <button type="submit" class="btn btn-primary btn-lg"><i
+                                                class="uil uil-message"></i> Enviar</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- listado de comentario -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well well-sm">
+                        <div class="card" style="width: 90%;">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+
+                                    <div class="container text-center">
+                                        <div class="row justify-content-between">
+                                            <div class="col-md-4 text-left">
+                                                <p><img src="/img/avatar.png" alt="logo" width="30" height="30">
+                                                    <b>Diego Macavilca Perez</b>
+                                                </p>
+                                            </div>
+                                            <div class="col-md-4 text-right"><b>
+                                                    <i class="uil uil-thumbs-up"></i>
+                                                    <i class="uil uil-ellipsis-v"></i>
+                                                </b>
+                                            </div>
+                                        </div>
+                                        <div class="container text-left">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur vero
+                                            sapiente omnis nihil, nam vel assumenda dolorum facilis dignissimos,
+                                            nesciunt mollitia unde iure quo culpa, minus provident. Laboriosam, sint
+                                            ipsum!
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
 
