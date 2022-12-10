@@ -14,13 +14,17 @@
     <main>
 
         <h1>OPINION</h1>
-        <div class="card" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-            </ul>
-        </div>
+        <% miopinionT.forEach(miopinion=> { %>
+            <br>
+            <div class="card" style="width: 100%;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Mensaje: <%= miopinion.mensaje %>
+                            <p> Fecha: <%= miopinion.createdAt %>
+                            </p>
+                    </li>
+                </ul>
+            </div>
+            <% }) %>
 
     </main>
 

@@ -38,8 +38,8 @@ notesCtrl.RenderListFavorito = async (req, res) => {
 
 notesCtrl.RenderListOpinion = async (req, res) => {
   const nombreusuario = req.user.name;
-  console.log(req.user.name);
-  res.render("pages/notes/opinion", { nombreusuario });
+  const miopinionT = await comentarioModel.find({ user: nombreusuario });
+  res.render("pages/notes/opinion", { nombreusuario, miopinionT });
 };
 
 notesCtrl.RenderListViajes = async (req, res) => {
