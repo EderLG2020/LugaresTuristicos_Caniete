@@ -1,0 +1,6 @@
+projectKey=Proyecto_Roles_undc
+serverUrl=http://localhost:9000
+serverVersion=9.7.1.62043
+dashboardUrl=http://localhost:9000/dashboard?id=Proyecto_Roles_undc
+ceTaskId=AYUT6Kyix2LHw-vwgFrJ
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYUT6Kyix2LHw-vwgFrJ

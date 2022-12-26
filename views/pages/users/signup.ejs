@@ -14,15 +14,15 @@
     <br>
     <div class="row">
         <div class="text-center">
-            <form action="/users/signup" method="post">
+            <form action="/users/signup" method="post" enctype="multipart/form-data">
                 <div class="row justify-content-center registro">
                     <div class="col-5">
                         <h2 class="titulo">LOGO</h2>
                         <img src=" /img/avatar.png" alt="imagen avatar default" width="40%">
                         <div class="file_archive">
                             <p>Cambiar Logo</p>
-                            <input type="file" aria-label="Archivo" id="btnfile" class="form-control btnfile"
-                                name="file" placeholder="Imagen" accept=".pdf,.jpg,.png" value="Upload Photo">
+                            <input type="file" id="btnfile" class="form-control btnfile" name="avatar"
+                                placeholder="Imagen" accept=".jpg,.png">
                         </div>
                     </div>
                     <div class="col-5">

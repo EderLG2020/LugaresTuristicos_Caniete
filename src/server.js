@@ -6,13 +6,13 @@ const override = require("method-override");
 const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
-const multer = require("multer");
 
 require("dotenv").config("./.env");
 
 // Inicia
 const app = express();
 require("../config/passport");
+app.use(express.urlencoded({ extended: true }));
 
 // settings
 app.set("port", process.env.PORT || 3001);
@@ -20,7 +20,6 @@ app.set("view engine", "ejs");
 
 // Middlewares
 app.use(morgan("dev"));
-app.use(express.urlencoded({ extended: true }));
 app.use(override("_method"));
 app.use(
   session({

@@ -16,12 +16,8 @@ const UserSchema = new Schema(
       require: true,
     },
     image: {
-      name: String,
-      desc: String,
-      img: {
-        data: Buffer,
-        contentType: String,
-      },
+      data: Buffer,
+      contentType: String,
     },
   },
   {
