@@ -26,33 +26,59 @@ notesCtrl.RenderAddNote = async (req, res) => {
 notesCtrl.RenderListNote = async (req, res) => {
   const notas = await NewMmodel.find({ user: req.user.id });
   const nombreusuario = req.user.name;
+  const logo = req.user.image.data;
+  const Typeimg = req.user.image.contentType;
   console.log(req.user.name);
-  res.render("pages/notes/all-notes", { notas, nombreusuario });
+  res.render("pages/notes/all-notes", {
+    notas,
+    nombreusuario,
+    logo: logo,
+    Typeimg: Typeimg,
+  });
 };
 
 notesCtrl.RenderListFavorito = async (req, res) => {
   const comentarios = await comentarioModel.find();
   const nombreusuario = req.user.name;
-  res.render("pages/notes/favoritos", { nombreusuario, comentarios });
+  const logo = req.user.image.data;
+  const Typeimg = req.user.image.contentType;
+  res.render("pages/notes/favoritos", {
+    nombreusuario,
+    comentarios,
+    logo,
+    Typeimg,
+  });
 };
 
 notesCtrl.RenderListOpinion = async (req, res) => {
   const nombreusuario = req.user.name;
+  const logo = req.user.image.data;
+  const Typeimg = req.user.image.contentType;
   const miopinionT = await comentarioModel.find({ user: nombreusuario });
-  res.render("pages/notes/opinion", { nombreusuario, miopinionT });
+  res.render("pages/notes/opinion", {
+    nombreusuario,
+    miopinionT,
+    logo: logo,
+    Typeimg: Typeimg,
+  });
 };
 
 notesCtrl.RenderListViajes = async (req, res) => {
   const nombreusuario = req.user.name;
+  const logo = req.user.image.data;
+  const Typeimg = req.user.image.contentType;
   console.log(req.user.name);
-  res.render("pages/notes/viajes", { nombreusuario });
+
+  res.render("pages/notes/viajes", { nombreusuario, logo, Typeimg });
 };
 
 notesCtrl.RenderEditForm = async (req, res) => {
   const note = await NewMmodel.findById(req.params.id);
   console.log("Recibido --->", note);
   const nombreusuario = req.user.name;
-  res.render("pages/notes/edit-notes", { note, nombreusuario });
+  const logo = req.user.image.data;
+  const Typeimg = req.user.image.contentType;
+  res.render("pages/notes/edit-notes", { note, nombreusuario, Typeimg, logo });
 };
 
 notesCtrl.RenderUpdateForm = async (req, res) => {

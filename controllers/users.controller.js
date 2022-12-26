@@ -19,8 +19,8 @@ userCtrl.signup = async (req, res) => {
   const img = fs.readFileSync(req.file.path);
   const encode_img = img.toString("base64");
   const final_img = {
-    contentType: req.file.mimetype,
     data: new Buffer(encode_img, "base64"),
+    contentType: req.file.mimetype,
   };
 
   // Vemos que las contraseñas sean iguales

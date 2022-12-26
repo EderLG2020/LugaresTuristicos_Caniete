@@ -149,3 +149,10 @@ header{
 .imgSize{
 	height: 800px;
 }
+
+.logoimg{
+	border-radius: 50%;
+}
+.imgComentario{
+	border-radius: 50%;
+}

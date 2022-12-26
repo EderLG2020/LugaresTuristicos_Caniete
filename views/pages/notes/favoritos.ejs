@@ -8,7 +8,7 @@
 <body class="container bodyprincipal">
 
     <header>
-        <%- include('../../partials/header',{nombreusuario:nombreusuario}); %>
+        <%- include('../../partials/header',{nombreusuario:nombreusuario,logo:logo,Typeimg:Typeimg}); %>
     </header>
     <main>
         <h1>CAÑETE</h1>
@@ -336,7 +336,14 @@
                                             class="fa fa-pencil-square-o bigicon"></i></span>
                                     <dov class="row">
                                         <div class="col-md-1">
-                                            <p><img src="/img/avatar.png" alt="logo" width="75" height="75">
+                                            <p>
+                                                <% if (logo) { %>
+                                                    <img class="imgComentario"
+                                                        src="data:logo/<%= Typeimg %>;base64,<%= logo.toString('base64')%>"
+                                                        alt="logo" width="75" height="75">
+                                                    <% } else { %>
+                                                        <img src="/img/avatar.png" alt="logo" width="75" height="75">
+                                                        <% } %>
                                             </p>
                                         </div>
                                         <div class="col-md-11">

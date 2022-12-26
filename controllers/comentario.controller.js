@@ -20,8 +20,15 @@ comentarioCtrl.postCommentario = async (req, res) => {
       user: nombreusuario,
       mensaje: message,
     });
+    const logo = req.user.image.data;
+    const Typeimg = req.user.image.contentType;
     await miComment.save();
-    res.render("pages/notes/favoritos", { nombreusuario, comentarios });
+    res.render("pages/notes/favoritos", {
+      nombreusuario,
+      comentarios,
+      logo,
+      Typeimg,
+    });
     console.log(miComment);
   }
 };
