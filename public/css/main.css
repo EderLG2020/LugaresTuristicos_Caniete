@@ -156,3 +156,11 @@ header{
 .imgComentario{
 	border-radius: 50%;
 }
+
+#imagenLoad{
+	border-radius: 50%;
+	width: 40%;
+	height: 200px;
+	align-items: center;
+	text-align: center;
+}

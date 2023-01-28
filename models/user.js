@@ -34,4 +34,4 @@ UserSchema.method.mathPass = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-module.exports = model("user", UserSchema);
+module.exports = model("User", UserSchema);

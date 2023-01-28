@@ -5,10 +5,16 @@ const ComentarioSchema = new Schema(
     user: {
       type: String,
       require: true,
+      // type: Schema.ObjectId,
+      // ref: "User",
     },
     mensaje: {
       type: String,
       require: true,
+    },
+    image: {
+      data: Buffer,
+      contentType: String,
     },
   },
   {
@@ -16,4 +22,4 @@ const ComentarioSchema = new Schema(
   }
 );
 
-module.exports = model("comentario", ComentarioSchema);
+module.exports = model("Comentario", ComentarioSchema);

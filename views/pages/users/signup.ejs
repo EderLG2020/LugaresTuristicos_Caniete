@@ -18,11 +18,12 @@
                 <div class="row justify-content-center registro">
                     <div class="col-5">
                         <h2 class="titulo">LOGO</h2>
-                        <img src=" /img/avatar.png" alt="imagen avatar default" width="40%">
+                        <img src=" /img/avatar.png" id="imagenLoad" alt="imagen avatar default">
+                        <div id="image-error" style="display: none;"></div>
                         <div class="file_archive">
                             <p>Cambiar Logo</p>
-                            <input type="file" id="btnfile" class="form-control btnfile" name="avatar"
-                                placeholder="Imagen" accept=".jpg,.png">
+                            <input type="file" id="btnfile" onchange="previewImage()" accept="image/*" max="2097152"
+                                class="form-control btnfile" name="avatar" placeholder="Imagen" accept=".jpg,.png">
                         </div>
                     </div>
                     <div class="col-5">
@@ -64,3 +65,6 @@
         <%- include('../../partials/footer'); %>
     </footer>
     <%- include('../../partials/footer-f') %>
+
+
+        <script src="/js/preload.js"></script>

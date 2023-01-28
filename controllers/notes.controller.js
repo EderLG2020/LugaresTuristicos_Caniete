@@ -28,6 +28,7 @@ notesCtrl.RenderListNote = async (req, res) => {
   const nombreusuario = req.user.name;
   const logo = req.user.image.data;
   const Typeimg = req.user.image.contentType;
+  console.log("user", req.user.id);
   console.log(req.user.name);
   res.render("pages/notes/all-notes", {
     notas,
@@ -39,7 +40,8 @@ notesCtrl.RenderListNote = async (req, res) => {
 
 notesCtrl.RenderListFavorito = async (req, res) => {
   const comentarios = await comentarioModel.find();
-  const nombreusuario = req.user.name;
+  const nombreusuario = await req.user.name;
+  console.log("nombre: Populado:-------", nombreusuario);
   const logo = req.user.image.data;
   const Typeimg = req.user.image.contentType;
   res.render("pages/notes/favoritos", {
@@ -55,6 +57,7 @@ notesCtrl.RenderListOpinion = async (req, res) => {
   const logo = req.user.image.data;
   const Typeimg = req.user.image.contentType;
   const miopinionT = await comentarioModel.find({ user: nombreusuario });
+  console.log(miopinionT);
   res.render("pages/notes/opinion", {
     nombreusuario,
     miopinionT,

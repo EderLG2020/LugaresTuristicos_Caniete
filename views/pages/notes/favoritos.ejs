@@ -8,7 +8,7 @@
 <body class="container bodyprincipal">
 
     <header>
-        <%- include('../../partials/header',{nombreusuario:nombreusuario,logo:logo,Typeimg:Typeimg}); %>
+        <%- include('../../partials/header',{nombreusuario,logo:logo,Typeimg:Typeimg}); %>
     </header>
     <main>
         <h1>CAÑETE</h1>
@@ -380,10 +380,20 @@
                                         <div class="container text-center">
                                             <div class="row justify-content-between">
                                                 <div class="col-md-4 text-left">
-                                                    <p><img src="/img/avatar.png" alt="logo" width="30" height="30">
-                                                        <b>
-                                                            <%= comentario.user %>
-                                                        </b>
+                                                    <p>
+                                                        <% if (comentario.image.data && comentario.image.contentType) {
+                                                            %>
+                                                            <img class="logoimg"
+                                                                src="data:image/<%= comentario.image.data %>;base64,<%= comentario.image.contentType.toString('base64')%> "
+                                                                alt="logo" width="40" height="40">
+                                                            <% } else { %>
+                                                                <img class="logoimg" src="/img/avatar.png" alt="logo"
+                                                                    width="30" height="30">
+                                                                <% } %>
+
+                                                                    <b>
+                                                                        <%= comentario.user %>
+                                                                    </b>
                                                     </p>
                                                 </div>
                                                 <div class="col-md-4 text-right"><b>
